@@ -1,0 +1,30 @@
+<mat-toolbar color="accent">
+    
+    <span routerLink="/">Angular&Nest App</span>
+    <div *ngIf="isAuthenticated">
+      <button mat-button routerLink="/users"  routerLinkActive="active" color="basic" class="example-icon" aria-label="Example icon-button with share icon">
+        users
+      </button>
+    </div>
+    <span class="example-spacer"></span>
+    <div *ngIf="!isAuthenticated">
+      <button mat-button routerLink="/login"  routerLinkActive="active" color="basic" class="example-icon" aria-label="Example icon-button with share icon">
+        Login
+      </button>
+    <button mat-button routerLink="/register"  routerLinkActive="active" color="basic" class="example-icon" aria-label="Example icon-button with share icon">
+      Register
+    </button>
+    </div>
+
+    <div *ngIf="isAuthenticated">
+      <button mat-button (click)="logout()"  routerLinkActive="active" routerLink="/login" color="basic" class="example-icon" aria-label="Example icon-button with share icon">
+        Logout
+      </button>
+      <button mat-button routerLink="/login"  routerLinkActive="active" color="basic" class="example-icon" aria-label="Example icon-button with share icon">
+        My Account
+      </button>
+    </div>
+    
+  </mat-toolbar>
+
+  

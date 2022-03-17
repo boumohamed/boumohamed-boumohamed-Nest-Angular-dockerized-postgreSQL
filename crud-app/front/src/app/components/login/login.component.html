@@ -1,0 +1,24 @@
+
+
+  <mat-grid-list cols="2" rowHeight="100px">
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+        <h1>Login</h1>
+    </mat-grid-tile>
+  </mat-grid-list>
+      
+
+    <mat-grid-list cols="2" rowHeight="100px">
+        <mat-grid-tile [colspan]="2" [rowspan]="4">
+          <form class="example-form"  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input type="email" matInput formControlName="email" placeholder="Ex. me@example.com">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>password</mat-label>
+                <input type="password" matInput formControlName="password">
+              </mat-form-field>
+              <button mat-raised-button color="accent" type="submit" [disabled]="!loginForm.valid">Login</button>
+          </form>
+        </mat-grid-tile>
+      </mat-grid-list>
